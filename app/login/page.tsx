@@ -133,7 +133,7 @@ export default function LoginPage() {
                                 <div className="flex items-center">
                                     <Label htmlFor="password">Password</Label>
                                     <Link
-                                        href="#"
+                                        href="/reset-password"
                                         className="ml-auto inline-block text-sm font-medium text-primary hover:underline transition-all"
                                     >
                                         Forgot your password?
