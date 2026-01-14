@@ -23,7 +23,7 @@ export default function ResetPasswordPage() {
         setSuccess(false);
 
         const { error } = await supabase.auth.resetPasswordForEmail(email, {
-            redirectTo: `https://studysync.ca/update-password`,
+            redirectTo: `https://studysync.ca/auth/callback?next=/update-password`,
         });
 
         if (error) {
