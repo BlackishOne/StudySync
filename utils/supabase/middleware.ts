@@ -32,6 +32,22 @@ export async function updateSession(request: NextRequest) {
         data: { user },
     } = await supabase.auth.getUser()
 
+    // Allow public access to SEO and static files
+    const publicPaths = [
+        '/robots.txt',
+        '/sitemap.xml',
+        '/favicon.ico',
+        '/opengraph-image',
+        '/_next',
+        '/api'
+    ]
+
+    const isPublicPath = publicPaths.some(path => request.nextUrl.pathname.startsWith(path))
+
+    if (isPublicPath) {
+        return supabaseResponse
+    }
+
     if (
         !user &&
         !request.nextUrl.pathname.startsWith('/login') &&

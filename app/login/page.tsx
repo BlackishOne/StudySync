@@ -11,6 +11,9 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import Image from "next/image";
 import { GraduationCap, Quote } from "lucide-react";
 
+// Note: Metadata cannot be exported from client components
+// It should be added to parent layout or a separate metadata file
+
 export default function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

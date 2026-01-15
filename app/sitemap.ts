@@ -2,25 +2,32 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://studysync.ca'
+    const currentDate = new Date()
 
     return [
         {
             url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
+            lastModified: currentDate,
+            changeFrequency: 'weekly',
             priority: 1,
         },
         {
             url: `${baseUrl}/login`,
-            lastModified: new Date(),
+            lastModified: currentDate,
             changeFrequency: 'monthly',
-            priority: 0.8,
+            priority: 0.9,
         },
         {
             url: `${baseUrl}/register`,
-            lastModified: new Date(),
+            lastModified: currentDate,
             changeFrequency: 'monthly',
-            priority: 0.8,
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/reset-password`,
+            lastModified: currentDate,
+            changeFrequency: 'yearly',
+            priority: 0.5,
         },
     ]
 }

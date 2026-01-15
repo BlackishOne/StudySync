@@ -18,8 +18,49 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "StudySync",
-  description: "Student Study Planner",
+  metadataBase: new URL('https://studysync.ca'),
+  title: {
+    default: 'StudySync | The Student Planner That Actually Works',
+    template: '%s | StudySync'
+  },
+  description: 'Manage courses, track assignments, and boost your GPA with our all-in-one student planner. Features include flashcards, Pomodoro timer, habit tracking, and more.',
+  keywords: ['student planner', 'study app', 'academic planner', 'flashcards', 'pomodoro timer', 'GPA tracker', 'task management', 'student productivity'],
+  authors: [{ name: 'StudySync' }],
+  creator: 'StudySync',
+  publisher: 'StudySync',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://studysync.ca',
+    title: 'StudySync | The Student Planner That Actually Works',
+    description: 'Manage courses, track assignments, and boost your GPA with our all-in-one student planner.',
+    siteName: 'StudySync',
+    images: [{
+      url: '/opengraph-image.png',
+      width: 1200,
+      height: 630,
+      alt: 'StudySync - Your Academic Life, Perfectly Organized'
+    }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'StudySync | The Student Planner That Actually Works',
+    description: 'Manage courses, track assignments, and boost your GPA with our all-in-one student planner.',
+    images: ['/opengraph-image.png']
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    }
+  },
+  verification: {
+    google: 'add-your-google-site-verification-code-here', // User will need to add this later
+  }
 };
 
 export default function RootLayout({
