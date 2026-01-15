@@ -6,6 +6,7 @@ import { AppShell } from "@/components/layout/AppShell";
 import { GlobalTimer } from "@/components/focus/GlobalTimer";
 import { SearchCommand } from "@/components/SearchCommand";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,6 +75,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-VZ5FHNMP1M" />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
